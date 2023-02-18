@@ -14,6 +14,7 @@ struct ViewDrinks: View {
     let apiName: String
     
     var body: some View {
+
         List(results, id: \.id) { item in
             HStack(){
                 VStack(alignment: .leading) {
@@ -28,6 +29,7 @@ struct ViewDrinks: View {
             }
             
         }
+        .listStyle(.inset)
         .onAppear(perform: loadData)
         .navigationTitle(categoryName)
     }

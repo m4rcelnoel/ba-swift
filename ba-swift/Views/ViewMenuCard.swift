@@ -70,38 +70,30 @@ struct ViewMenuCard: View {
                         VStack {
                             MenuRow(
                                 geometry: geometry,
-                                categoryNameLeft: "Kaffee",
-                                categoryNameRight: "Heiße Schoko",
+                                categoryNameLeft: "Heißgetränke",
+                                categoryNameRight: "Heiße Schoki",
                                 apiNameLeft: "hotdrinks",
                                 apiNameRight: "hotchocolate"
                             )
                             MenuRow(
                                 geometry: geometry,
-                                categoryNameLeft: "Softdrinks",
-                                categoryNameRight: "Säfte",
-                                apiNameLeft: "softdrinks",
-                                apiNameRight: "juice"
+                                categoryNameLeft: "Eiskaltes",
+                                categoryNameRight: "Softdrinks",
+                                apiNameLeft: "icecold",
+                                apiNameRight: "softdrinks"
                             )
                             MenuRow(
                                 geometry: geometry,
-                                categoryNameLeft: "Business",
-                                categoryNameRight: "Science",
-                                apiNameLeft: "",
-                                apiNameRight: ""
-                            )
-                            MenuRow(
-                                geometry: geometry,
-                                categoryNameLeft: "Business",
-                                categoryNameRight: "Science",
-                                apiNameLeft: "",
-                                apiNameRight: ""
+                                categoryNameLeft: "Säfte",
+                                categoryNameRight: "Snacks süß",
+                                apiNameLeft: "juice",
+                                apiNameRight: "snackssweet"
                             )
                         }
                         .padding()
                     }
                     .navigationTitle("Menu Card")
                     .navigationBarHidden(true)
-                    .background(blackBlue)
                 }
             }
         }

@@ -12,13 +12,13 @@ struct ContentView: View {
         TabView {
             ViewMenuCard()
                 .tabItem() {
-                    Image(systemName: "phone.fill")
+                    Image(systemName: "house.fill")
                     Text("Home")
                 }
             ViewContact()
                 .tabItem() {
-                    Image(systemName: "person.fill")
-                    Text("Kontakt")
+                    Image(systemName: "info")
+                    Text("Info")
                 }
         }
     }
