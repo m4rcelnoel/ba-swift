@@ -10,7 +10,9 @@ import SwiftUI
 @main
 struct ba_swiftApp: App {
     var body: some Scene {
+        // Hauptfenster der App
         WindowGroup {
+            // SwiftUI-Ansicht
             ContentView()
         }
     }

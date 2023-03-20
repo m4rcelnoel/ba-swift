@@ -8,16 +8,19 @@
 import SwiftUI
 
 struct MenuCard: View {
-    let geometry: GeometryProxy
-    let categoryName: String
-    let apiName: String
+    let geometry: GeometryProxy // Informationen zur Größe und zum Ort der Elternansicht
+    let categoryName: String // Name der Kategorie
+    let apiName: String // API-Endpunkt
     var body: some View {
+        // ZStack-Ansicht
         ZStack(alignment: .bottomTrailing) {
+            // Bild der Menükarte
             Image(categoryName.lowercased())
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: geometry.size.width*0.45,
-                       height: geometry.size.width*0.45)
+                .frame(width: geometry.size.width*0.45, // Breite des Bildes = 45% der Elternansicht
+                       height: geometry.size.width*0.45) // Höhe des Bildes = 45% der Elternansicht
+            // Text, der den Namen der Kategorie anzeigt
             Text(categoryName)
                 .font(.headline)
                 .frame(maxWidth: .infinity, alignment: .bottom)
@@ -31,11 +34,12 @@ struct MenuCard: View {
 
 struct MenuRow: View {
     let geometry: GeometryProxy
-    let categoryNameLeft: String
-    let categoryNameRight: String
-    let apiNameLeft: String
-    let apiNameRight: String
+    let categoryNameLeft: String // Name der linken Kategorie
+    let categoryNameRight: String // Name der rechten Kategorie
+    let apiNameLeft: String // API-Endpunkt für die linke Kategorie
+    let apiNameRight: String // API-Endpunkt für die rechte Kategorie
     var body: some View {
+        //HStack-Ansicht, Menükarten nebeneinander anzeigen
         HStack {
             NavigationLink(destination: ViewDrinks(categoryName: categoryNameLeft, apiName: apiNameLeft)){
                 MenuCard(geometry: geometry, categoryName: categoryNameLeft, apiName: apiNameLeft)
@@ -51,6 +55,7 @@ struct ViewMenuCard: View {
     
     let blackBlue = Color(red: 0.04, green: 0.05, blue: 0.08)
     var body: some View {
+        // VStack-Ansicht, Zuständig für Banner Bild und Menükarte
         VStack{
             ZStack(alignment: .topTrailing){
                 Image("bar")
@@ -95,8 +100,11 @@ struct ViewMenuCard: View {
                     .navigationTitle("Menu Card")
                     .navigationBarHidden(true)
                 }
+                .background(Color.black)
             }
+            .background(Color.black)
         }
+        .background(Color.black)
     }
 }
 
